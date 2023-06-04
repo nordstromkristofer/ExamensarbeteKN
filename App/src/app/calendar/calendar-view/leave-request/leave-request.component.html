@@ -1,0 +1,58 @@
+
+<mat-card>
+
+  <mat-card-title style="
+  padding-bottom: 10px;
+  padding-top: 10px;
+">
+    Ansök om ledighet
+
+  </mat-card-title>
+  <mat-card-content>
+    <mat-form-field appearance="fill">
+      <mat-label>Välj datum</mat-label>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+      <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+        <input matStartDate formControlName="start" placeholder="Från">
+        <input matEndDate formControlName="end" placeholder="Till">
+      </mat-date-range-input>
+
+
+      <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+      <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
+    </mat-form-field>
+
+
+  </mat-card-content>
+  <mat-form-field>
+    <select matNativeControl required #typeSelect>
+      <option value="1">Semester</option>
+      <option value="2">Flexledigt</option>
+      <option value="3">Föräldraledigt</option>
+      <option value="4">Tjänstledigt</option>
+      <option value="5">Permission</option>
+      <option value="6">Långtidssjukskriven</option>
+      <option value="7">Utbildning</option>
+      <option value="8">Halvdag</option>
+      <option value="9">Sjukdom</option>
+      <option value="10">Kunduppdrag</option>
+      <option value="11">VAB</option>
+      <option value="12">Uttag övertid</option>
+    </select>
+
+
+  </mat-form-field>
+  <br><br>
+      <mat-form-field class="example-full-width" style="width: 25rem;">
+        <mat-label>Kommentar</mat-label>
+        <textarea matInput #commentInput></textarea>
+      </mat-form-field>
+
+
+  <button mat-raised-button style="margin-right: 15px; border-radius:20px; background-color: #FBE122;" (click)="submitForm()">Ansök</button>
+
+  <button mat-raised-button color="warn" style="border-radius: 20px;" (click)="closeCard()">Stäng</button>
+
+
+</mat-card>
