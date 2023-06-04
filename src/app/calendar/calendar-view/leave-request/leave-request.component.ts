@@ -2,7 +2,6 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { SystemService } from '../../services/system.service';
 import { dayBook, SystemModel } from './../../row-generator/row-generator-interfaces';
-import * as dayjs from 'dayjs';
 import { HeaderComponent } from '../../../core/header/header.component';
 import { HttpHeaders } from '@angular/common/http';
 
@@ -35,7 +34,7 @@ export class LeaveRequestComponent implements OnInit {
     const member = this.member;
     const site = this.site;
     const systemModel: SystemModel = {
-      member: 'zx0536',
+      member: 'ze0106',
       site: 'site',
       startDate,
       endDate,
@@ -49,13 +48,13 @@ export class LeaveRequestComponent implements OnInit {
     };
 
 
-    /*     this.systemService.postDate(systemModel).subscribe(response => {
-          // handle response as needed
-          console.log(response);
-        }, error => {
-          // handle error as needed
-          console.error(error);
-        }); */
+    this.systemService.submitData(systemModel).subscribe(response => {
+      // handle response as needed
+      console.log(response);
+    }, error => {
+      // handle error as needed
+      console.error(error);
+    });
   }
 
 
