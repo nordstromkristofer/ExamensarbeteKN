@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "N5HbWyeM1F6mTSc45CxERheQAxbvVmecHe055QFRTRYBKLV3BIBUHQ0OgmhiMI3RU2F7n65FbszLRZVbwL66Ow==",
+  "success": true,
+  "projectFilePath": "/Users/kristofernordstrom/Documents/Examensarbete/App/backoffice/appusAPI/appusAPI.csproj",
+  "expectedPackageFiles": [
+    "/Users/kristofernordstrom/.nuget/packages/microsoft.aspnetcore.openapi/7.0.5/microsoft.aspnetcore.openapi.7.0.5.nupkg.sha512",
+    "/Users/kristofernordstrom/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/Users/kristofernordstrom/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
+    "/Users/kristofernordstrom/.nuget/packages/swashbuckle.aspnetcore/6.4.0/swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "/Users/kristofernordstrom/.nuget/packages/swashbuckle.aspnetcore.swagger/6.4.0/swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "/Users/kristofernordstrom/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.4.0/swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "/Users/kristofernordstrom/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.4.0/swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}
