@@ -1,0 +1,80 @@
+<!--<h2>Frånvarande</h2>-->
+
+<div class="employeefilter">
+  <mat-label style="font-size: 24px;">Team</mat-label>
+  <mat-select value="{{selectedTeam}}" (selectionChange)="filterTeam($event.value)">
+    <mat-option value="">Alla</mat-option>
+    <mat-option value="1">Purple</mat-option>
+    <mat-option value="2">Red</mat-option>
+    <mat-option value="3">Blue</mat-option>
+    <mat-option value="4">Green</mat-option>
+    <mat-option value="5">Yellow</mat-option>
+    <mat-option value="6">Pink</mat-option>
+    <mat-option value="7">Orange</mat-option>
+    <mat-option value="8">Hosting</mat-option>
+    <mat-option value="9">AM</mat-option>
+    <mat-option value="10">Specialist</mat-option>
+    <mat-option value="11">Ledning</mat-option>
+    <mat-option value="12">Projektledare</mat-option>
+    <mat-option value="13">Beredskap</mat-option>
+    <mat-option value="14">ServiceDesk</mat-option>
+    <mat-option value="15">GBG</mat-option>
+    <mat-option value="16">THN</mat-option>
+    <mat-option value="17">STHLM</mat-option>
+    <mat-option value="18">HR</mat-option>
+    <mat-option value="19">Amber</mat-option>
+  </mat-select>
+</div>
+
+<mat-paginator [length]="pageLength"
+               [pageSize]="pageSize"
+               [pageSizeOptions]="pageSizeOptions"
+               (page)="onPageChange($event)"
+                 
+               >
+
+</mat-paginator>
+
+<mat-table [dataSource]="dataSource" matSort>
+  <!-- Member Column -->
+  <ng-container matColumnDef="member">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Member </mat-header-cell>
+    <mat-cell *matCellDef="let request"> {{ getUserName(request.member) }} </mat-cell>
+  </ng-container>
+
+  <!-- Comment Column -->
+  <!--  <ng-container matColumnDef="type">
+      <mat-header-cell *matHeaderCellDef> Typ </mat-header-cell>
+      <mat-cell *matCellDef="let request"> {{ request.type }} </mat-cell>
+    </ng-container>-->
+
+  <ng-container matColumnDef="type">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Typ </mat-header-cell>
+    <mat-cell *matCellDef="let request"> {{ getRequestType(request.type) }} </mat-cell>
+  </ng-container>
+
+
+  <!-- Comment Column -->
+  <!-- Start Date Column -->
+  <ng-container matColumnDef="startDate">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Start</mat-header-cell>
+    <mat-cell *matCellDef="let request"> {{ request.startDate | date }} </mat-cell>
+  </ng-container>
+
+  <!-- End Date Column -->
+  <ng-container matColumnDef="endDate">
+    <mat-header-cell *matHeaderCellDef>Slut </mat-header-cell>
+    <mat-cell *matCellDef="let request"> {{ request.endDate | date }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="comment">
+    <mat-header-cell *matHeaderCellDef> Comment </mat-header-cell>
+    <mat-cell *matCellDef="let request"> {{ request.comment }} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+
+

@@ -1,0 +1,30 @@
+
+
+
+.outerheader {
+  width: 100%;
+  background-color: #1D3C34;
+  height: 12rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 1px;
+  height: 16rem;
+  flex-grow: 1;
+  margin: 1% 0% 0% 3%;
+}
+
+
+
+
+
+
+
+
+
