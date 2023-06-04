@@ -8,15 +8,10 @@
   <div class="container">
 
     <div class="cardcontainer">
-      <!--  <div class="img">
-        <img src="../../../assets/nordlologo.svg" alt="nordlologo">
-        </div>-->
       <mat-card style="border-radius:45px; padding:9px;">
         <mat-card-content style="border-radius:45px;">
-          <img src="../../../assets/nordloblk.jpg"
-            style=" position: absolute; display: flex; align-items: center; justify-content: center; width: 17rem; top: 5rem;">
           <form #form="ngForm" class="example-form" style="margin-top:65%">
-
+            <h2>Appus</h2>
             <p>
               <mat-form-field>
                 <input autofocus [disabled]="loggingIn" autocomplete="username" required matInput [(ngModel)]="username"
