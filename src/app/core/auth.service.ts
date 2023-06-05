@@ -45,6 +45,12 @@ export class AuthService {
     return sessionStorage.getItem(AccessTokenKey);
   }
 
+  isAuthenticated(): boolean {
+    // Add your authentication logic here
+    // For example, check if the user has a valid access token
+    return !!this.getAccessToken();
+  }
+
   private setAccessToken(token?: string) {
     if (token) {
       sessionStorage.setItem(AccessTokenKey, token);
