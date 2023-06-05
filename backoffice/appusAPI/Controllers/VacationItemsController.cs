@@ -1,5 +1,10 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using Appus.Models;
+using System.Linq;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+
 
 namespace YourNamespace.Controllers
 {
@@ -10,12 +15,14 @@ namespace YourNamespace.Controllers
     private static List<VacationItem> _vacationItems = new List<VacationItem>();
 
     [HttpGet]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public ActionResult<IEnumerable<VacationItem>> GetVacationItems()
     {
       return _vacationItems;
     }
 
     [HttpGet("{id}")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public ActionResult<VacationItem> GetVacationItem(int id)
     {
       var vacationItem = _vacationItems.Find(item => item.Id == id);
@@ -29,13 +36,16 @@ namespace YourNamespace.Controllers
     }
 
     [HttpPost]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public ActionResult<VacationItem> CreateVacationItem(VacationItem vacationItem)
     {
+      vacationItem.Id = _vacationItems.Count + 1;
       _vacationItems.Add(vacationItem);
       return CreatedAtAction(nameof(GetVacationItem), new { id = vacationItem.Id }, vacationItem);
     }
 
     [HttpPut("{id}")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public IActionResult UpdateVacationItem(int id, VacationItem updatedVacationItem)
     {
       var vacationItem = _vacationItems.Find(item => item.Id == id);
@@ -45,7 +55,6 @@ namespace YourNamespace.Controllers
         return NotFound();
       }
 
-      // Update the properties of the existing vacation item
       vacationItem.DateOfChange = updatedVacationItem.DateOfChange;
       vacationItem.StartDate = updatedVacationItem.StartDate;
       vacationItem.EndDate = updatedVacationItem.EndDate;
@@ -58,6 +67,7 @@ namespace YourNamespace.Controllers
     }
 
     [HttpDelete("{id}")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public IActionResult DeleteVacationItem(int id)
     {
       var vacationItem = _vacationItems.Find(item => item.Id == id);
