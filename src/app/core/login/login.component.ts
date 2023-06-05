@@ -12,7 +12,6 @@ import { throwError } from 'rxjs';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-
 export class LoginComponent implements OnInit {
 
   constructor(private authService: AuthService, private router: Router, private apiService: ApiService) { }
@@ -28,53 +27,31 @@ export class LoginComponent implements OnInit {
     /*     this.resetCredentials(); */
   }
 
-  /*   submit(form: NgForm) {
-      if (!form.valid) {
-        return;
-      }
-  
-      this.errorMessage = null;
-  
-      this.loggingIn = true;
-  
-      this.authService.login({ username: this.username, password: this.password }).pipe(
-        catchError((error) => {
-          this.resetPassword();
-  
+  login(): void {
+    this.errorMessage = null;
+    this.loggingIn = true;
+
+    // Call the login method of the AuthService
+    this.authService.login({ username: this.username, password: this.password })
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          console.log('Login error:', error);
+          this.errorMessage = error.message;
           return throwError(error);
         }),
         finalize(() => {
+          console.log('Login completed');
           this.loggingIn = false;
-  
         })
-      ).subscribe(res => {
-        this.router.navigate(['/']);
-      }, error => {
-        this.setErrorMessage(error);
-      });
-    }
-  
-    private setErrorMessage(error: any) {
-      if (error instanceof HttpErrorResponse && error.status === 401) {
-        const errorDetails = error.error;
-        if (Array.isArray(errorDetails) && errorDetails.length) {
-          this.errorMessage = errorDetails.join('. ');
-        } else if (typeof errorDetails === 'string') {
-          this.errorMessage = errorDetails;
-        } else {
-          this.errorMessage = 'Unauthorized';
+      )
+      .subscribe(
+        (success: boolean) => {
+          if (success) {
+            console.log('Login successful');
+            // Redirect to the desired page after successful login
+            this.router.navigate(['/calendar']);
+          }
         }
-      } else {
-        this.errorMessage = 'An error occured';
-      }
-    }
-  
-    private resetPassword() {
-      this.password = null;
-    }
-  
-    private resetCredentials() {
-      this.username = null;
-      this.password = null;
-    } */
+      );
+  }
 }

@@ -14,6 +14,16 @@ namespace YourNamespace
     {
       services.AddControllers();
 
+      services.AddCors(options =>
+   {
+     options.AddDefaultPolicy(builder =>
+      {
+        builder.WithOrigins("http://localhost:4200")
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+      });
+   });
+
       // Configure JWT authentication
       services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
           .AddJwtBearer(options =>
@@ -38,10 +48,17 @@ namespace YourNamespace
       }
 
       app.UseRouting();
+      app.Run(async (context) =>
+{
+  await context.Response.WriteAsync("Hello World!");
+});
 
       // Enable authentication
       app.UseAuthentication();
       app.UseAuthorization();
+
+      app.UseCors();
+
 
       app.UseEndpoints(endpoints =>
       {
