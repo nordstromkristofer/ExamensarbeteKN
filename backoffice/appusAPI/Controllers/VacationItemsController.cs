@@ -1,9 +1,10 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using YourNamespace.Models;
+using Appus.Models;
 using System.Linq;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+
 
 namespace YourNamespace.Controllers
 {

@@ -17,13 +17,13 @@ namespace YourNamespace.Controllers
   {
     [HttpPost]
     [Route("login")]
-    public IActionResult Login(LoginRequest request)
+    public IActionResult Login(string username, string password)
     {
       // Dummy username and password
       string dummyUsername = "dummyuser";
       string dummyPassword = "dummypassword";
 
-      if (request.Username == dummyUsername && request.Password == dummyPassword)
+      if (username == dummyUsername && password == dummyPassword)
       {
         var token = GenerateJwtToken(dummyUsername);
         return Ok(new { Token = token });
