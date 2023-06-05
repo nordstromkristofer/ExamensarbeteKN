@@ -5,6 +5,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
+using System.Security.Cryptography;
 
 namespace YourNamespace.Controllers
 {
@@ -15,6 +16,13 @@ namespace YourNamespace.Controllers
   [ApiController]
   public class LoginController : ControllerBase
   {
+    private readonly string _secretKey;
+
+    public LoginController()
+    {
+      _secretKey = GenerateSecretKey();
+    }
+
     [HttpPost]
     [Route("login")]
     public IActionResult Login(string username, string password)
@@ -35,7 +43,7 @@ namespace YourNamespace.Controllers
     private string GenerateJwtToken(string username)
     {
       var tokenHandler = new JwtSecurityTokenHandler();
-      var key = Encoding.UTF8.GetBytes("your-super-secret-key"); // Replace with your secure secret key
+      var key = Encoding.UTF8.GetBytes(_secretKey);
       var tokenDescriptor = new SecurityTokenDescriptor
       {
         Subject = new ClaimsIdentity(new[]
@@ -47,6 +55,16 @@ namespace YourNamespace.Controllers
       };
       var token = tokenHandler.CreateToken(tokenDescriptor);
       return tokenHandler.WriteToken(token);
+    }
+
+    private string GenerateSecretKey()
+    {
+      using (var randomNumberGenerator = RandomNumberGenerator.Create())
+      {
+        var keyBytes = new byte[32]; // 32 bytes = 256 bits
+        randomNumberGenerator.GetBytes(keyBytes);
+        return Convert.ToBase64String(keyBytes);
+      }
     }
 
     // ...
