@@ -2,7 +2,7 @@
 
 <div class="employeefilter">
   <mat-label style="font-size: 24px;">Team</mat-label>
-  <mat-select value="{{selectedTeam}}" (selectionChange)="filterTeam($event.value)">
+  <mat-select [(value)]="selectedTeam" (selectionChange)="filterTeam($event.value)">
     <mat-option value="">Alla</mat-option>
     <mat-option value="1">Purple</mat-option>
     <mat-option value="2">Red</mat-option>
@@ -26,35 +26,25 @@
   </mat-select>
 </div>
 
-<mat-paginator [length]="pageLength"
-               [pageSize]="pageSize"
-               [pageSizeOptions]="pageSizeOptions"
-               (page)="onPageChange($event)"
-                 
-               >
-
+<mat-paginator [length]="pageLength" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+  (page)="onPageChange($event)">
 </mat-paginator>
 
 <mat-table [dataSource]="dataSource" matSort>
   <!-- Member Column -->
   <ng-container matColumnDef="member">
     <mat-header-cell *matHeaderCellDef mat-sort-header> Member </mat-header-cell>
-    <mat-cell *matCellDef="let request"> {{ getUserName(request.member) }} </mat-cell>
+    <mat-cell *matCellDef="let request">
+      <span>{{ getUserName(request.member) }}</span>
+    </mat-cell>
   </ng-container>
 
-  <!-- Comment Column -->
-  <!--  <ng-container matColumnDef="type">
-      <mat-header-cell *matHeaderCellDef> Typ </mat-header-cell>
-      <mat-cell *matCellDef="let request"> {{ request.type }} </mat-cell>
-    </ng-container>-->
-
+  <!-- Type Column -->
   <ng-container matColumnDef="type">
     <mat-header-cell *matHeaderCellDef mat-sort-header> Typ </mat-header-cell>
     <mat-cell *matCellDef="let request"> {{ getRequestType(request.type) }} </mat-cell>
   </ng-container>
 
-
-  <!-- Comment Column -->
   <!-- Start Date Column -->
   <ng-container matColumnDef="startDate">
     <mat-header-cell *matHeaderCellDef mat-sort-header> Start</mat-header-cell>
@@ -67,14 +57,23 @@
     <mat-cell *matCellDef="let request"> {{ request.endDate | date }} </mat-cell>
   </ng-container>
 
+  <!-- Comment Column -->
   <ng-container matColumnDef="comment">
     <mat-header-cell *matHeaderCellDef> Comment </mat-header-cell>
     <mat-cell *matCellDef="let request"> {{ request.comment }} </mat-cell>
   </ng-container>
 
+  <!-- Actions Column -->
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+    <mat-cell *matCellDef="let request">
+      <mat-checkbox [(ngModel)]="request.approved" (click)="approveRequest(request)"></mat-checkbox>
+      <button mat-icon-button color="warn" (click)="deleteRequest(request)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 </mat-table>
-
-
-

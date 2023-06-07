@@ -22,12 +22,11 @@ import { MatSort } from '@angular/material/sort';
 export class AbsentListComponent implements OnInit {
 
   allRequests: AbsentRequest[] = [];
-  displayedColumns: string[] = ['member', 'type', 'startDate', 'endDate', 'comment'];
+  displayedColumns: string[] = ['member', 'type', 'startDate', 'endDate', 'comment', 'actions'];
   dataSource: MatTableDataSource<AbsentRequest>;
   pageSizeOptions: number[] = [-1, 5, 10, 25, 100, 250];
   pageLength: number;
   pageSize: number;
-
 
   users: User[];
 
@@ -49,8 +48,6 @@ export class AbsentListComponent implements OnInit {
       this.dataSource.data = this.allRequests;
       this.pageLength = this.allRequests.length;
       this.dataSource.paginator = this.paginator;
-
-
       this.dataSource.sort = this.sort;
 
       this.userService.getUsers().subscribe((data) => {
@@ -102,7 +99,6 @@ export class AbsentListComponent implements OnInit {
     }
   }
 
-
   onPageChange(event: any) {
     this.pageSize = event.pageSize === -1 ? this.dataSource.data.length : event.pageSize;
     this.paginator.pageIndex = event.pageIndex;
@@ -110,4 +106,23 @@ export class AbsentListComponent implements OnInit {
     this.paginator.page.emit(event);
   }
 
+  approveRequest(request: AbsentRequest): void {
+    const approved = request.approved === 0 ? 1 : 0;
+    this.systemService.approveRequest(request.id, approved).subscribe(() => {
+      // Update the request in the dataSource
+      const index = this.allRequests.findIndex(r => r.id === request.id);
+      if (index !== -1) {
+        this.allRequests[index].approved = approved;
+        this.dataSource.data = this.allRequests;
+      }
+    });
+  }
+
+  deleteRequest(request: AbsentRequest): void {
+    this.systemService.deleteRequest(request.id).subscribe(() => {
+      // Remove the request from the dataSource
+      this.allRequests = this.allRequests.filter(r => r.id !== request.id);
+      this.dataSource.data = this.allRequests;
+    });
+  }
 }

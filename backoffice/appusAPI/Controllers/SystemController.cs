@@ -71,7 +71,6 @@ namespace YourNamespace.Controllers
         var result = getMaxIdCommand.ExecuteScalar();
         var maxId = result != DBNull.Value ? Convert.ToInt32(result) : (int?)null;
 
-
         // Increment the Id value for the new record
         systemModel.Id = maxId.HasValue ? maxId.Value + 1 : 1;
 
@@ -93,5 +92,48 @@ namespace YourNamespace.Controllers
       return Ok();
     }
 
+    [HttpPut("{id}")]
+    public IActionResult PutApprovedValue(int id)
+    {
+      using (var connection = new SqliteConnection(_connectionString))
+      {
+        connection.Open();
+
+        var command = connection.CreateCommand();
+        command.CommandText = "UPDATE system SET Approved = CASE WHEN Approved = 0 THEN 1 ELSE 0 END WHERE Id = @Id";
+        command.Parameters.AddWithValue("@Id", id);
+
+        var rowsAffected = command.ExecuteNonQuery();
+
+        if (rowsAffected == 0)
+        {
+          return NotFound();
+        }
+      }
+
+      return Ok();
+    }
+
+    [HttpDelete("{id}")]
+    public IActionResult DeleteDataFromDatabase(int id)
+    {
+      using (var connection = new SqliteConnection(_connectionString))
+      {
+        connection.Open();
+
+        var command = connection.CreateCommand();
+        command.CommandText = "DELETE FROM system WHERE Id = @Id";
+        command.Parameters.AddWithValue("@Id", id);
+
+        var rowsAffected = command.ExecuteNonQuery();
+
+        if (rowsAffected == 0)
+        {
+          return NotFound();
+        }
+      }
+
+      return Ok();
+    }
   }
 }

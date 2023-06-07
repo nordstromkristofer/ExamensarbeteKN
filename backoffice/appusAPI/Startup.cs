@@ -25,20 +25,8 @@ namespace YourNamespace
       });
    });
 
-      // Configure JWT authentication
-      services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-          .AddJwtBearer(options =>
-          {
-            options.TokenValidationParameters = new TokenValidationParameters
-            {
-              ValidateIssuer = true,
-              ValidateAudience = true,
-              ValidateLifetime = true,
-              ValidIssuer = "your-issuer",
-              ValidAudience = "your-audience",
-              IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("your-super-secret-key"))
-            };
-          });
+
+
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
