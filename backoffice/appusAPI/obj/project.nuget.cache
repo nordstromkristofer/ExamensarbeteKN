@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+z/UOzr5DthbZ2+1qazrJQcbjEMZPX5IHq0r3A0ogZYDg5tEnYIJ2+kjxydiPbCUo/d1qpvVy6CUjrGunIEMhg==",
+  "dgSpecHash": "NBej/9TfVPok77RPZJAZ/85zpvOH7HSecgXrcMgZdkhfwDVPYrr3piXDu9/wfWm6wVLBeEn+5cXjkcz+Q8Gckw==",
   "success": true,
   "projectFilePath": "/Users/kristofernordstrom/Documents/Examensarbete/App/backoffice/appusAPI/appusAPI.csproj",
   "expectedPackageFiles": [
@@ -28,6 +28,8 @@
     "/Users/kristofernordstrom/.nuget/packages/microsoft.codeanalysis.workspaces.common/4.4.0/microsoft.codeanalysis.workspaces.common.4.4.0.nupkg.sha512",
     "/Users/kristofernordstrom/.nuget/packages/microsoft.codeanalysis.workspaces.msbuild/4.4.0/microsoft.codeanalysis.workspaces.msbuild.4.4.0.nupkg.sha512",
     "/Users/kristofernordstrom/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
+    "/Users/kristofernordstrom/.nuget/packages/microsoft.data.sqlite/7.0.5/microsoft.data.sqlite.7.0.5.nupkg.sha512",
+    "/Users/kristofernordstrom/.nuget/packages/microsoft.data.sqlite.core/7.0.5/microsoft.data.sqlite.core.7.0.5.nupkg.sha512",
     "/Users/kristofernordstrom/.nuget/packages/microsoft.diasymreader/1.4.0/microsoft.diasymreader.1.4.0.nupkg.sha512",
     "/Users/kristofernordstrom/.nuget/packages/microsoft.dotnet.scaffolding.shared/7.0.6/microsoft.dotnet.scaffolding.shared.7.0.6.nupkg.sha512",
     "/Users/kristofernordstrom/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
@@ -79,6 +81,11 @@
     "/Users/kristofernordstrom/.nuget/packages/runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "/Users/kristofernordstrom/.nuget/packages/runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "/Users/kristofernordstrom/.nuget/packages/runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
+    "/Users/kristofernordstrom/.nuget/packages/sqlite/3.13.0/sqlite.3.13.0.nupkg.sha512",
+    "/Users/kristofernordstrom/.nuget/packages/sqlitepclraw.bundle_e_sqlite3/2.1.4/sqlitepclraw.bundle_e_sqlite3.2.1.4.nupkg.sha512",
+    "/Users/kristofernordstrom/.nuget/packages/sqlitepclraw.core/2.1.4/sqlitepclraw.core.2.1.4.nupkg.sha512",
+    "/Users/kristofernordstrom/.nuget/packages/sqlitepclraw.lib.e_sqlite3/2.1.4/sqlitepclraw.lib.e_sqlite3.2.1.4.nupkg.sha512",
+    "/Users/kristofernordstrom/.nuget/packages/sqlitepclraw.provider.e_sqlite3/2.1.4/sqlitepclraw.provider.e_sqlite3.2.1.4.nupkg.sha512",
     "/Users/kristofernordstrom/.nuget/packages/swashbuckle.aspnetcore/6.4.0/swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "/Users/kristofernordstrom/.nuget/packages/swashbuckle.aspnetcore.swagger/6.4.0/swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "/Users/kristofernordstrom/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.4.0/swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",

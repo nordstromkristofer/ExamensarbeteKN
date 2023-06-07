@@ -1,0 +1,277 @@
+userName,employeeId
+Thomas Eriksson,ze0123
+Onsite Lerum,zo0108
+Malin Dahl,ze0117
+Magnus Blomberg,ze0115
+Ola Hammarstedt,ze0119
+Anders Blomgren,ze0106
+Niclas Otterberg,ze0127
+Pål Junhamn,ze0102
+Joachim Östh,ze0113
+Anders Hultbrand,ze0105
+Lars Larsson,ze0114
+Erika Tollmén,ze0103
+Fredrik Carlsson,ze0111
+Douglas Johansson,ze0108
+Administrator,Administrator
+Guest,Guest
+krbtgt,krbtgt
+Johan Bjurbäck,ze0152
+FederatedEmail.4c1f4d8b-8179-4148-93bf-00a95fa1e042,SM_e99a8137ba0244398
+SystemMailbox{e0dc1c29-89c3-4034-b678-e6c29d823ed9},SM_2e130088662f4005a
+DiscoverySearchMailbox {D919BA05-46A6-415f-80AD-7E09334BB852},SM_a3d8a8dc8e3c4b29a
+Niclas Möre,ze0157
+Patrik Persson,zx0132
+Victor Johansson,ze0172
+Patrik Johansson,ze0174
+David Persson,ze0178
+Telekonf-GOT,Telekonf-GOT
+Poolbil-GOT,Poolbil-GOT
+Martina Wester,ze0179
+Poolbil-STH-V60,Poolbil-STH-V50
+Emma Aronsson,ze0188
+Joakim Bachelard,ze0195
+Gustav Jibing,ze0199
+Takbox THN 1,MBX_Takbox_THN_1
+Takbox THN 2,MBX_Takbox_THN_2
+Takbox THN 3,MBX_Takbox_THN_3
+SVC_MDTJoinAccount,SVC_MDTJoinAccount
+Orio Request,orio.request
+Tomas Persson,ze0202
+Födelsedagar,fodelsedagar
+Duo Lerum,MBX_Duo_Lerum
+Martin Larsson,ze0210
+Mattias Ericson,ze0212
+Gustav Danielsson,ze0231
+Filip Milestad,ze0214
+Madelene Comstedt,ze0215
+Payam Pazooki,ze0232
+service.ekonomi,service.ekonomi
+Tomas Roos,ze0234
+Markus Hellgren,ze0241
+Albin Tångberg,ze0237
+Noreply,noreply
+Rasmus Edqvist,ze0245
+Servicenow_test,servicenow_test
+ZetupSjuka,ZetupSjuka
+WindowsPatchSchema,WindowsPatchSchema
+Zetup Automotive,automotive
+Gabriel Gerdin,ze0251
+Simon Larsson,ze0253
+Anette Vejdegren,ze0256
+svc_servicenow,svc_servicenow
+Resursplanering,svc_resursplanering
+zJohan Bjurbäck,it-ze0152
+zJoakim Bachelard,it-ze0195
+Bill Gerdin,ze0261
+Hans Jemt,ze0279
+Niklas Kagelind,ze0277
+Daniel Torstensson,ze0280
+Simon Lilly,ze0282
+zMartin Larsson,it-ze0210
+Joakim Niklasson,ze0286
+Ulf Svensson,ze0289
+Robert Frisk,ze0288
+zGabriel Gerdin,it-ze0251
+Tobias Björkdahl,ze0292
+Toni Matinen,ze0290
+DefaultAccount,DefaultAccount
+zAnders Blomgren,it-ze0106
+zRobert Frisk,it-ze0288
+Louise Lindquist,ze0294
+Ahmad Khantomany,ze0296
+ent-Johan Bjurbäck,ent-ze0152
+ent-Anders Blomgren,ent-ze0106
+Anders Ritter,ze0298
+Jonatan Andersson,ze0299
+zSimon Lilly,it-ze0282
+zMattias Ericson,it-ze0212
+Sabaiena Khan,ze0300
+Fredrik Wikman,ze0303
+zPayam Pazooki,it-ze0232
+Jesper Rosdal,ze0305
+zFredrik Carlsson,it-ze0111
+zThomas Eriksson,it-ze0123
+Fahad Hamid,ze0308
+Björn Nilsson,ze0309
+Rickard Andersson,ze0311
+svc_onoffboarding,svc_onoffboarding
+Viktor Jonsson,ze0318
+zHans Jemt,it-ze0279
+Privacy,Privacy
+svc_pwreport,svc_pwreport
+Anders Nilsson,ze0316
+Mattias Jadesköld,ze0320
+Philip Holst,ze0326
+Nike Swärd,ze0327
+Emma Hedenström,ze0325
+Erik Olsson,ze0324
+zUlf Svensson,it-ze0289
+Ebba Larter,ze0328
+Erik Zalitis,ze0331
+Rasmus Johansson,ze0329
+Ulrik Wärefors,ze0330
+Tim Hjort,ze0333
+zMagnus Blomberg,it-ze0115
+zSimon Larsson,it-ze0253
+Hampus Bräutigam,ze0343
+Hugo Reuterberg,ze0344
+David Nyul Toth,ze0345
+Ruben Rudvall,ze0347
+svc-sql-sccm-de,svc-sql-sccm-de
+svc-sql-sccm-sa,svc-sql-sccm-sa
+svc-sql-sccm-rs,svc-sql-sccm-rs
+svc-sccm-cpi,svc-sccm-cpi
+svc-sccm-naa,svc-sccm-naa
+svc-sccm-mca,svc-sccm-mca
+svc-sccm-rpt,svc-sccm-rpt
+svc-sccm-join,svc-sccm-join
+svc-docker harbor,svc-dockerharbor
+svc-sccm-mdm,svc-sccm-mdm
+Tove Borgström,ze0352
+Samuel Högström,ze0359
+Niklas Backlund,ze0360
+Pontus Jounger,ze0362
+Mathias Åberg,ze0366
+Carina Ahlgren,ZE0369
+Christofer Fransson,ze0372
+John Gratte,ze0373
+Farid Jahanbani,ze0374
+svc-ad-computer-lifecycle,svc-ad-computer-life
+zMathias Åberg,it-ze0366
+zPatrik Johansson,it-ze0174
+zNiclas Otterberg,it-ze0127
+Balint Nyul Toth,ze0382
+Benjamin Nettervik,ze0383
+Sarah Ehrenberg,ze0386
+Markus Bajlo,zx0385
+Patric Lundqvist,ze0381
+Jonas Olsson,ze0387
+George Sarkisian,ze0396
+Felix Vejdegren,ze0398
+Göran Peterson,zx0400
+Julien Vizuete,ze0401
+Fabian Fuchs,ze0402
+Annie Wernberg,ze0403
+ent-Mathias Åberg,ent-ze0366
+Anders Bäckman,ze0407
+Jimmy Hjertzell,ze0412
+Natacha Alvarez,ze0416
+Fabian Thelning,ze0417
+Malek Msoti,zx0418
+Fredrik Lindberg,zx0419
+Marton Nyul Toth,ze0426
+Anton Carlsson,ze0428
+Markus Sundström,zx0427
+Markus Morén,ze0421
+Per Hallén,zx0430
+Gustav Ödebrink,ze0431
+Johan Sundström,ze0434
+Ida Wahman,zx0435
+Christoffer Wetterlundh,ze0437
+Philip Wall,ze0438
+André Morrone,zx0439
+zSamuel Högström,it-ze0359
+Ali Mohammad,ze0442
+Linus Norberg,ze0443
+Rewan Levin,ze0446
+Fatina Al-Walai,zx0445
+Koroush Golchin,zx0449
+Cecilia Kjellman,ze0450
+svc-EmblaLicens,svc-EmblaLicens
+zGeorge Sarkisian,it-ze0396
+Gillis Öberg,zx0453
+Ruben Pellikka,ze0454
+Eric Wardh,ze0456
+zAnton Carlsson,it-ze0428
+Jenny Höglin,ze0460
+Apivat Hagström,zx0461
+Compass,xcompass
+zFredrik Lindberg,it-ze0419
+Samuel Zeidan,ze0464
+Lovisa Johansson,ze0465
+svc-nordscan,svc-nordscan
+Murti Mussa,zx0467
+Tobias Porsmark,zx0466
+Fredrik Sellehed,ze0468
+Arvid Falk-Klingberg,ze0470
+Anders Sylvin,ze0469
+Bengt-Göran Kangas,ze0472
+André Botström,zx0473
+Liam Lenholm,ze0475
+Erik Lundgren,zx0476
+Sarah Mizban,zx0477
+Jens Bergström,ze0479
+Daniel Zetterström,ze0484
+Eise Smit,zx0487
+ent-Samuel Högström,ent-ze0359
+ent-Tim Hjort,ent-0333
+zTim Hjort,it-ze0333
+zMarkus Morén,it-ze0421
+Jespher Carlholmer,zx0486
+Filip Lindälv,ze0485
+Niklas Dahlsten,ze0493
+Nina Sagebrand,zx0494
+Johan Olsson,ze0492
+Tommy Suoraniemi,zx0497
+svc-git-runner,svc-git-runner
+Alexander Hammarstedt,ze0498
+Emil Edqvist,ze0500
+Roberto Eid,zx0501
+Donatas Zvinklys,ze0502
+Joakim Wester,ze0503
+Lucas Madsen,ze0505
+Jonny Glimblad,ze0509
+Niklas Wilhelmsson,ze0507
+Emelie Fransson,ze0508
+Johan Ericson,ze0510
+Daniel Bodin,zx0513
+Andre Ghiasvand,ze0514
+Isak Lund,ze0516
+Isak Nordgren,ze0515
+Gustaf von Matern,ze0517
+Fatin Elabed,zx0518
+Derek Lam,ze0519
+Rikard Persson,ze0511
+zFelix Vejdegren,it-ze0398
+Henrik Jonsson,zx0527
+Tobias Löfgren,zx0528
+David Fredriksson,zx0525
+Erik Sharifi,zx0526
+Petri Sädesuo,zx0529
+Nassar Cardinal,ze0530
+Louis Headlam,ze0531
+Lové Lavén,zx0532
+Niclas Olsson,zx0533
+Daniel Lembratt,ze0534
+Felix Blinke,zx0535
+Kristofer Nordström,zx0536
+zTomas Persson,it-ze0202
+Alexander Lundström,ze0537
+Albin Freiholtz,zx0547
+zJohan Sundström,it-ze0434
+Johan Selmosson,ze0548
+Reza Rahman Panah,ze0549
+Emma von Schewen,ze0550
+zBalint Nyul Toth,it-ze0382
+zTobias Porsmark,it-zx0466
+zMagnus Bergenram,it-ze0504
+zIsak Nordgren,it-ze0515
+zGustaf von Matern,it-ze0517
+zLove Lavén,it-zx0532
+zNiclas Olsson,it-zx0533
+Emile Ramini,ze0552
+Lina Hagstedt,ze0551
+Simon Hassius,ze0566
+Andreas Kanill,ze0565
+Elias Arola,zx0564
+Niklas Börve,ze0568
+André Swahnberg,ze0567
+Mats Sjöblom,ze0569
+Linus Kaste,zx0570
+zDouglas Johansson,it-ze0108
+Dawid Kowalski,zx0572
+Klara Frank,zx0573
+Sofi Svedberger,ze0574
+Eric Rudblom,zx0575
+Francesca Rahmani,zx0576

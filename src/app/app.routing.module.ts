@@ -14,7 +14,7 @@ const routes: Routes = [
   {
     path: '',
     component: HeaderComponent,
-    canActivate: [AuthGuard], // Apply the AuthGuard to this route
+    // canActivate: [AuthGuard], // Apply the AuthGuard to this route
     children: [
       {
         path: '',
@@ -24,7 +24,7 @@ const routes: Routes = [
       {
         path: 'calendar',
         component: RowGeneratorComponent,
-        canActivate: [AuthGuard] // Apply the AuthGuard to this child route as well
+        // canActivate: [AuthGuard] // Apply the AuthGuard to this child route as well
       }
     ]
   },

@@ -13,6 +13,7 @@ namespace YourNamespace
     public void ConfigureServices(IServiceCollection services)
     {
       services.AddControllers();
+      services.AddLogging();
 
       services.AddCors(options =>
    {
@@ -48,10 +49,6 @@ namespace YourNamespace
       }
 
       app.UseRouting();
-      app.Run(async (context) =>
-{
-  await context.Response.WriteAsync("Hello World!");
-});
 
       // Enable authentication
       app.UseAuthentication();
