@@ -4,9 +4,6 @@ export interface SystemModel {
   type: number;
   comment: string;
   dateOfChange: Date;
-  presence: number;
-  progress: number;
   approved: number;
-  attachement: string;
 }
 

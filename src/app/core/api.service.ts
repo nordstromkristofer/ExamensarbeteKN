@@ -87,7 +87,7 @@ export class ApiService {
   }
 
   private getUrl(url: string): string {
-    url = `api/${url}`;
+    url = `http://localhost:5000/api/${url}`;
 
     return url;
   }

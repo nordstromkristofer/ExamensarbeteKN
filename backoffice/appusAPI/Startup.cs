@@ -13,6 +13,17 @@ namespace YourNamespace
     public void ConfigureServices(IServiceCollection services)
     {
       services.AddControllers();
+      services.AddLogging();
+
+      services.AddCors(options =>
+   {
+     options.AddDefaultPolicy(builder =>
+      {
+        builder.WithOrigins("http://localhost:4200")
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+      });
+   });
 
       // Configure JWT authentication
       services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -42,6 +53,9 @@ namespace YourNamespace
       // Enable authentication
       app.UseAuthentication();
       app.UseAuthorization();
+
+      app.UseCors();
+
 
       app.UseEndpoints(endpoints =>
       {

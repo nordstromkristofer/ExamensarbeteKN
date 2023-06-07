@@ -17,20 +17,20 @@ export class AuthService {
   User$: Observable<User> = this.userSubject$.asObservable();
 
   constructor(private apiService: ApiService,
-    private router: Router) { 
-      const tokens = {
-        accessToken: this.getAccessToken()
-      };
-      if (tokens.accessToken) {
-        this.setUser(tokens.accessToken);
-      }
+    private router: Router) {
+    const tokens = {
+      accessToken: this.getAccessToken()
+    };
+    if (tokens.accessToken) {
+      this.setUser(tokens.accessToken);
+    }
   }
 
-  login(user: { username: string | null, password: string | null}): Observable<boolean> {
+  login(user: { username: string | null, password: string | null }): Observable<boolean> {
     return this.apiService.post<any>('user', user, null, null!, Interceptor.All)
       .pipe(
-        tap(tokens =>{
-          
+        tap(tokens => {
+
           this.setUser(tokens.value.accessToken)
         }),
         mapTo(true),
@@ -43,6 +43,12 @@ export class AuthService {
 
   getAccessToken(): any {
     return sessionStorage.getItem(AccessTokenKey);
+  }
+
+  isAuthenticated(): boolean {
+    // Add your authentication logic here
+    // For example, check if the user has a valid access token
+    return !!this.getAccessToken();
   }
 
   private setAccessToken(token?: string) {

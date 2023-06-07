@@ -4,6 +4,8 @@ import { SystemService } from '../../services/system.service';
 import { dayBook, SystemModel } from './../../row-generator/row-generator-interfaces';
 import { HeaderComponent } from '../../../core/header/header.component';
 import { HttpHeaders } from '@angular/common/http';
+import { DatePipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-leave-request',
@@ -19,43 +21,39 @@ export class LeaveRequestComponent implements OnInit {
   id: number;
   selectedType: number;
   comment: string;
-  attachement: string;
   member: string;
-  site: string;
 
-  constructor(private systemService: SystemService) { }
+  constructor(private systemService: SystemService, private datePipe: DatePipe) { }
 
   submitForm() {
-    const startDate = this.range.controls.start.value;
-    const endDate = this.range.controls.end.value;
+    const startDate = this.datePipe.transform(this.range.controls.start.value, 'yyyy-MM-ddT00:00:00');
+    const endDate = this.datePipe.transform(this.range.controls.end.value, 'yyyy-MM-ddT00:00:00');
     const type = this.selectedType;
     const comment = this.comment;
-    const attachement = this.attachement;
     const member = this.member;
-    const site = this.site;
-    const systemModel: SystemModel = {
-      member: 'ze0106',
-      site: 'site',
-      startDate,
-      endDate,
-      type,
-      comment: 'comment',
-      dateOfChange: new Date(),
-      presence: 0,
-      progress: 0,
-      approved: 0,
-      attachement: 'attachement' // <-- Corrected spelling
-    };
 
+    const dateOfChange = this.datePipe.transform(new Date(), 'yyyy-MM-ddTHH:mm:ss');
+
+
+    const systemModel: SystemModel = {
+      member: 'zn0895',
+      startDate: startDate,
+      endDate: endDate,
+      approved: 0,
+      type: 0,
+      comment: 'comment',
+      dateOfChange: dateOfChange,
+    };
 
     this.systemService.submitData(systemModel).subscribe(response => {
       // handle response as needed
-      console.log(response);
+      console.log('response:', response);
     }, error => {
       // handle error as needed
       console.error(error);
     });
   }
+
 
 
   ngOnInit(): void {

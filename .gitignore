@@ -2,3 +2,10 @@ node_modules
 .angular/cache/
 .angular/cache/13.3.11/angular-webpack/fac72aad866b30a1b7a431cf06e44d14d8943c86/0.pack
 .angular/cache/13.3.11/angular-webpack/fac72aad866b30a1b7a431cf06e44d14d8943c86/index.pack
+backoffice/appusAPI/bin/
+backoffice/appusAPI/obj/
+backoffice/appusAPI/appusAPI.csproj
+backoffice/appusAPI/obj/appusAPI.csproj.nuget.dgspec.json
+backoffice/appusAPI/obj/project.assets.json
+backoffice/appusAPI/obj/project.nuget.cache
+backoffice/appusAPI/obj/Debug/net7.0/appusAPI.assets.cache

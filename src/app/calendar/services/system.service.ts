@@ -15,7 +15,7 @@ export class SystemService {
 
 
 
-  private systemUrl = 'http://localhost:3000/system';
+  private systemUrl = 'http://localhost:5000/api/system';
 
 
 
@@ -24,13 +24,12 @@ export class SystemService {
 
 
   submitData(systemModel: SystemModel): Observable<any> {
-    const url = this.systemUrl; // Replace with your actual API URL
+    const url = this.systemUrl;
     return this.http.post(url, systemModel);
   }
 
   getRequests(): Observable<AbsentRequest[]> {
-    // Assuming you make an HTTP request to fetch the data
-    // Adjust the URL accordingly based on your backend API
+
     return this.http.get<AbsentRequest[]>(this.systemUrl);
   }
 }

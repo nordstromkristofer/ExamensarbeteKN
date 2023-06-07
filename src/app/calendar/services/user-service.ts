@@ -10,8 +10,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class UserService {
 
-  private usersUrl = 'http://localhost:3000/users';
-  private postUrl = 'http://localhost:3000/1'; // mockURL
+  private usersUrl = 'http://localhost:5000/api/user';
+  private postUrl = 'http://localhost:5000/api/system'; // mockURL
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
