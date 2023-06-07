@@ -1,30 +1,5 @@
 <!--<h2>Frånvarande</h2>-->
 
-<div class="employeefilter">
-  <mat-label style="font-size: 24px;">Team</mat-label>
-  <mat-select [(value)]="selectedTeam" (selectionChange)="filterTeam($event.value)">
-    <mat-option value="">Alla</mat-option>
-    <mat-option value="1">Purple</mat-option>
-    <mat-option value="2">Red</mat-option>
-    <mat-option value="3">Blue</mat-option>
-    <mat-option value="4">Green</mat-option>
-    <mat-option value="5">Yellow</mat-option>
-    <mat-option value="6">Pink</mat-option>
-    <mat-option value="7">Orange</mat-option>
-    <mat-option value="8">Hosting</mat-option>
-    <mat-option value="9">AM</mat-option>
-    <mat-option value="10">Specialist</mat-option>
-    <mat-option value="11">Ledning</mat-option>
-    <mat-option value="12">Projektledare</mat-option>
-    <mat-option value="13">Beredskap</mat-option>
-    <mat-option value="14">ServiceDesk</mat-option>
-    <mat-option value="15">GBG</mat-option>
-    <mat-option value="16">THN</mat-option>
-    <mat-option value="17">STHLM</mat-option>
-    <mat-option value="18">HR</mat-option>
-    <mat-option value="19">Amber</mat-option>
-  </mat-select>
-</div>
 
 <mat-paginator [length]="pageLength" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
   (page)="onPageChange($event)">
@@ -39,11 +14,6 @@
     </mat-cell>
   </ng-container>
 
-  <!-- Type Column -->
-  <ng-container matColumnDef="type">
-    <mat-header-cell *matHeaderCellDef mat-sort-header> Typ </mat-header-cell>
-    <mat-cell *matCellDef="let request"> {{ getRequestType(request.type) }} </mat-cell>
-  </ng-container>
 
   <!-- Start Date Column -->
   <ng-container matColumnDef="startDate">
@@ -64,13 +34,16 @@
   </ng-container>
 
   <!-- Actions Column -->
-  <ng-container matColumnDef="actions">
-    <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+  <ng-container matColumnDef="approve" class="approve">
+    <mat-header-cell *matHeaderCellDef> Godkänn </mat-header-cell>
     <mat-cell *matCellDef="let request">
       <mat-checkbox [(ngModel)]="request.approved" (click)="approveRequest(request)"></mat-checkbox>
-      <button mat-icon-button color="warn" (click)="deleteRequest(request)">
-        <mat-icon>delete</mat-icon>
-      </button>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="delete" class="delete">
+    <mat-header-cell *matHeaderCellDef> Ta bort </mat-header-cell>
+    <mat-cell *matCellDef="let request">
+      <button mat-button color="warn" (click)="deleteRequest(request)">X</button>
     </mat-cell>
   </ng-container>
 

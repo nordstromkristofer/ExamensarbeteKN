@@ -12,14 +12,15 @@ body {
   margin-left: 2%;
   position: static;
   margin-bottom: 29%;
- 
+
 }
+
 
 .employeefilter {
   width: 10%;
   padding-top: 1%;
 }
 
-.mat-dialog-container{
-    height:auto;
+.mat-dialog-container {
+  height: auto;
 }

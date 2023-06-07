@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AbsentListComponent } from '../../calendar/calendar-view/absent-list/absent-list.component';
 import { LeaveRequestComponent } from '../../calendar/calendar-view/leave-request/leave-request.component';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,7 +15,8 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private dialog: MatDialog,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   onLeaveRequestClick() {
@@ -48,8 +50,7 @@ export class HeaderComponent implements OnInit {
 
 
   logout() {
-    this.authService.logout();
-    location.reload();
+    this.router.navigate(['/login']);
 
   }
 

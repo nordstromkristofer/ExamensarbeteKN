@@ -5,6 +5,7 @@ import { dayBook, SystemModel } from './../../row-generator/row-generator-interf
 import { HeaderComponent } from '../../../core/header/header.component';
 import { HttpHeaders } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -23,7 +24,7 @@ export class LeaveRequestComponent implements OnInit {
   comment: string;
   member: string;
 
-  constructor(private systemService: SystemService, private datePipe: DatePipe) { }
+  constructor(private systemService: SystemService, private datePipe: DatePipe, private location: Location) { }
 
   submitForm() {
     const startDate = this.datePipe.transform(this.range.controls.start.value, 'yyyy-MM-ddT00:00:00');
@@ -48,10 +49,15 @@ export class LeaveRequestComponent implements OnInit {
     this.systemService.submitData(systemModel).subscribe(response => {
       // handle response as needed
       console.log('response:', response);
+      this.reloadPage(); // Reload the page
     }, error => {
       // handle error as needed
       console.error(error);
     });
+  }
+
+  reloadPage() {
+    window.location.reload();
   }
 
 
