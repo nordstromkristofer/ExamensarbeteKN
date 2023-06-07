@@ -16,7 +16,7 @@ export interface dayBook {
 }
 
 export interface SystemModel {
-  dateOfChange: Date,
+  dateOfChange: string,
   startDate: string,
   endDate: string,
   member: string,

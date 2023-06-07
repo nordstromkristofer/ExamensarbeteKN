@@ -36,7 +36,7 @@ namespace YourNamespace.Controllers
             var systemModel = new SystemModel
             {
               Id = (int)reader.GetInt64(0),
-              DateOfChange = reader.IsDBNull(1) ? null : DateTime.Parse(reader.GetString(1)),
+              DateOfChange = reader.GetString(1),
               StartDate = reader.IsDBNull(2) ? null : DateTime.Parse(reader.GetString(2)),
               EndDate = reader.IsDBNull(3) ? null : DateTime.Parse(reader.GetString(3)),
               Member = reader.GetString(4),
