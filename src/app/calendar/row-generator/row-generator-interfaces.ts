@@ -1,4 +1,5 @@
 import dayjs from 'dayjs';
+import { DateFormatPipe } from '../date-format.pipe';
 
 
 export interface dayBook {
@@ -16,13 +17,16 @@ export interface dayBook {
 
 export interface SystemModel {
   dateOfChange: Date,
-  startDate: Date,
-  endDate: Date,
+  startDate: string,
+  endDate: string,
   member: string,
   approved: number,
   type: number,
   comment: string,
 }
+
+
+
 
 
 

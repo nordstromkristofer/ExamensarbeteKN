@@ -35,12 +35,12 @@ namespace YourNamespace.Controllers
           {
             var systemModel = new SystemModel
             {
-              Id = reader.GetInt32(0),
+              Id = (int)reader.GetInt64(0),
               DateOfChange = reader.IsDBNull(1) ? null : DateTime.Parse(reader.GetString(1)),
               StartDate = reader.IsDBNull(2) ? null : DateTime.Parse(reader.GetString(2)),
               EndDate = reader.IsDBNull(3) ? null : DateTime.Parse(reader.GetString(3)),
               Member = reader.GetString(4),
-              Approved = reader.GetInt32(5),
+              Approved = reader.IsDBNull(5) ? null : (long?)reader.GetInt64(5),
               Comment = reader.GetString(6),
             };
 
@@ -65,10 +65,21 @@ namespace YourNamespace.Controllers
       {
         connection.Open();
 
-        var command = connection.CreateCommand();
-        command.CommandText = "INSERT INTO system (DateOfChange, StartDate, EndDate, Member, Approved, Comment, Attachment) " +
-            "VALUES (@DateOfChange, @StartDate, @EndDate, @Member, @Approved, @Comment, @Attachment)";
+        // Get the current maximum Id from the table
+        var getMaxIdCommand = connection.CreateCommand();
+        getMaxIdCommand.CommandText = "SELECT MAX(Id) FROM system";
+        var result = getMaxIdCommand.ExecuteScalar();
+        var maxId = result != DBNull.Value ? Convert.ToInt32(result) : (int?)null;
 
+
+        // Increment the Id value for the new record
+        systemModel.Id = maxId.HasValue ? maxId.Value + 1 : 1;
+
+        var command = connection.CreateCommand();
+        command.CommandText = "INSERT INTO system (Id, DateOfChange, StartDate, EndDate, Member, Approved, Comment) " +
+            "VALUES (@Id, @DateOfChange, @StartDate, @EndDate, @Member, @Approved, @Comment)";
+
+        command.Parameters.AddWithValue("@Id", systemModel.Id);
         command.Parameters.AddWithValue("@DateOfChange", systemModel.DateOfChange);
         command.Parameters.AddWithValue("@StartDate", systemModel.StartDate);
         command.Parameters.AddWithValue("@EndDate", systemModel.EndDate);
@@ -81,5 +92,6 @@ namespace YourNamespace.Controllers
 
       return Ok();
     }
+
   }
 }

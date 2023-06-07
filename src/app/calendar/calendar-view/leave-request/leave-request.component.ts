@@ -31,14 +31,13 @@ export class LeaveRequestComponent implements OnInit {
     const member = this.member;
     const systemModel: SystemModel = {
       member: 'ze0123',
-      startDate,
-      endDate,
-      type,
+      startDate: startDate,
+      endDate: endDate,
+      approved: 0,
+      type: 0,
       comment: 'comment',
       dateOfChange: new Date(),
-      approved: 0,
     };
-
 
     this.systemService.submitData(systemModel).subscribe(response => {
       // handle response as needed
@@ -48,6 +47,7 @@ export class LeaveRequestComponent implements OnInit {
       console.error(error);
     });
   }
+
 
 
   ngOnInit(): void {
