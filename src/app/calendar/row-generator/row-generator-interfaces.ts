@@ -12,7 +12,6 @@ export interface dayBook {
   approved: number;
   type: number;
   comment: string | null;
-  attachement: string | null;
 }
 
 export interface SystemModel {
@@ -20,13 +19,9 @@ export interface SystemModel {
   startDate: Date,
   endDate: Date,
   member: string,
-  presence: number,
-  site: string,
-  progress: number,
   approved: number,
   type: number,
   comment: string,
-  attachement: string
 }
 
 

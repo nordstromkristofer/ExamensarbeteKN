@@ -36,7 +36,6 @@ export interface AbsentRequest {
   approved: number,
   type: number,
   comment: string,
-  attachement: string,
   date: string,
   find: any
 

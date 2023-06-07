@@ -8,6 +8,5 @@ public class SystemModel
   public int Approved { get; set; }
   public int Type { get; set; }
   public string Comment { get; set; }
-  public string Attachment { get; set; }
 }
 

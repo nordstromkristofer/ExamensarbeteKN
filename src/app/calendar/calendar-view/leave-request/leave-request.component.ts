@@ -19,9 +19,7 @@ export class LeaveRequestComponent implements OnInit {
   id: number;
   selectedType: number;
   comment: string;
-  attachement: string;
   member: string;
-  site: string;
 
   constructor(private systemService: SystemService) { }
 
@@ -30,21 +28,15 @@ export class LeaveRequestComponent implements OnInit {
     const endDate = this.range.controls.end.value;
     const type = this.selectedType;
     const comment = this.comment;
-    const attachement = this.attachement;
     const member = this.member;
-    const site = this.site;
     const systemModel: SystemModel = {
-      member: 'ze0106',
-      site: 'site',
+      member: 'ze0123',
       startDate,
       endDate,
       type,
       comment: 'comment',
       dateOfChange: new Date(),
-      presence: 0,
-      progress: 0,
       approved: 0,
-      attachement: 'attachement' // <-- Corrected spelling
     };
 
 

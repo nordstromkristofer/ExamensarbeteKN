@@ -1,9 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Data.Sqlite;
-using System.Collections.Generic;
-using Microsoft.Extensions.Logging;
 using System;
+using System.Collections.Generic;
 
 namespace YourNamespace.Controllers
 {
@@ -51,6 +50,36 @@ namespace YourNamespace.Controllers
       }
 
       return systemModels;
+    }
+
+    [HttpPost]
+    public IActionResult PostDataToDatabase(SystemModel systemModel)
+    {
+      // Validate the input data
+      if (systemModel == null || !ModelState.IsValid)
+      {
+        return BadRequest(ModelState);
+      }
+
+      using (var connection = new SqliteConnection(_connectionString))
+      {
+        connection.Open();
+
+        var command = connection.CreateCommand();
+        command.CommandText = "INSERT INTO system (DateOfChange, StartDate, EndDate, Member, Approved, Comment, Attachment) " +
+            "VALUES (@DateOfChange, @StartDate, @EndDate, @Member, @Approved, @Comment, @Attachment)";
+
+        command.Parameters.AddWithValue("@DateOfChange", systemModel.DateOfChange);
+        command.Parameters.AddWithValue("@StartDate", systemModel.StartDate);
+        command.Parameters.AddWithValue("@EndDate", systemModel.EndDate);
+        command.Parameters.AddWithValue("@Member", systemModel.Member);
+        command.Parameters.AddWithValue("@Approved", systemModel.Approved);
+        command.Parameters.AddWithValue("@Comment", systemModel.Comment);
+
+        command.ExecuteNonQuery();
+      }
+
+      return Ok();
     }
   }
 }
