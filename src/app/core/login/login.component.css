@@ -1,9 +1,6 @@
-
 * {
   font-family: 'Overpass', sans-serif;
 }
-
-
 
 
 .img {
@@ -11,8 +8,8 @@
   height: 22%;
 }
 
-*{
-    overflow-x:hidden;
+* {
+  overflow-x: hidden;
 }
 
 
@@ -29,9 +26,6 @@
   font-size: 16px;
 }
 
-.mat-card mat-focus-indicator {
- 
-}
 
 .logintitle {
   border: 1px solid black;
@@ -43,20 +37,30 @@ mat-card {
   width: 25rem;
   height: 38rem;
   margin: 2rem auto 25px;
-  background-color: #986221;
+  background-color: #982d21;
   ;
 }
 
-mat-card-title, mat-card-content {
+mat-card-title,
+mat-card-content {
   display: flex;
   justify-content: center;
   background-color: white;
-  height:100%;
+  height: 100%;
 
 }
 
 .example-form {
   margin-top: 10%;
+}
+
+.loginheader {
+  text-align: center;
+  position: absolute;
+  bottom: 25rem;
+  left: 8rem;
+  font-size: 2rem;
+  height: 4rem;
 }
 
 .error {
@@ -66,16 +70,16 @@ mat-card-title, mat-card-content {
   background-color: red;
 }
 
-.matbutton{
-    font-size:16px;
+.matbutton {
+  font-size: 16px;
 }
 
 .button {
-  color: #986221;
+  color: #982d21;
   display: flex;
   justify-content: center;
   margin-top: 5%;
-  border: 2px solid #986221;
+  border: 2px solid #982d21;
   border-radius: 10px;
 }
 
@@ -90,4 +94,3 @@ body {
   top: 0;
   left: 0;
 }
-

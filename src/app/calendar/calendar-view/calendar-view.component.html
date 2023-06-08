@@ -3,35 +3,9 @@
     <div class="range" *ngIf="from != null && to != null">
       {{from | amDateFormat:'MMM YYYY'}} ― {{to | amDateFormat:'MMM YYYY'}}
     </div>
-    <div class="employeefilter">
-      <mat-label style="font-size: 24px; padding:15px;">Team</mat-label>
-      <mat-select value="{{selectedTeam}}" (selectionChange)="filterTeam($event.value)">
-        <mat-option value="">Alla</mat-option>
-        <mat-option value="1">Purple</mat-option>
-        <mat-option value="2">Red</mat-option>
-        <mat-option value="3">Blue</mat-option>
-        <mat-option value="4">Green</mat-option>
-        <mat-option value="5">Yellow</mat-option>
-        <mat-option value="6">Pink</mat-option>
-        <mat-option value="7">Orange</mat-option>
-        <mat-option value="8">Hosting</mat-option>
-        <mat-option value="9">AM</mat-option>
-        <mat-option value="10">Specialist</mat-option>
-        <mat-option value="11">Ledning</mat-option>
-        <mat-option value="12">Projektledare</mat-option>
-        <mat-option value="13">Beredskap</mat-option>
-        <mat-option value="14">ServiceDesk</mat-option>
-        <mat-option value="15">GBG</mat-option>
-        <mat-option value="16">THN</mat-option>
-        <mat-option value="17">STHLM</mat-option>
-        <mat-option value="18">HR</mat-option>
-        <mat-option value="19">Amber</mat-option>
-      </mat-select>
-    </div>
   </div>
 
   <div class="dateheader">
-    <input type="text" placeholder="Sök efter medarbetare" [(ngModel)]="searchText" class="search">
     <div class="side-header side"></div>
     <div class="main-header" #scrollHeader id="headerstyle">
       <div *ngFor="let item of days; let i = index; trackBy: trackByKey" class="header-day" [ngClass]="item.headerClass"

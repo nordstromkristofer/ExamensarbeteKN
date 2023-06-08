@@ -6,10 +6,6 @@
 }
 
 
-button {
-  /* border-radius:20px;
-  border-style: none;*/
-}
 
 .logout:hover {
   cursor: pointer;
@@ -38,12 +34,6 @@ button {
 }
 
 
-::-webkit-scrollbar {
-  /*    position: sticky;
-    bottom: 1rem;
-    align-self: flex-end;*/
-}
-
 
 
 
@@ -65,10 +55,10 @@ button {
 
 .outerheader {
   width: 100%;
-  background-color: #1D3C34;
+  background-color: #1d273ce0;
   border-bottom: 5px solid #f3dbc6;
   margin-bottom: 2%;
-  /*height: 12rem;*/
+  height: 8rem;
 }
 
 .header {
@@ -95,7 +85,6 @@ button {
   grid-row: 2;
   width: 12rem;
   margin-top: 29px;
-  background-color: #1D3C34;
   font-weight: bold;
   color: #f3dbc6 !important;
   letter-spacing: 0.9px;
@@ -122,9 +111,10 @@ button {
 .requestcard,
 .sicktoday {
   font-family: Roboto, Arial, sans-serif;
-  margin-top: 33px;
+  margin-top: 25px;
   text-transform: uppercase;
   grid-row: 2;
+  margin-right: 3rem;
   cursor: pointer;
   font-size: 16px !important;
   font-weight: bold;
@@ -157,9 +147,7 @@ logout:hover,
   margin-left: 9.3%;
 }
 
-/*.headerstyle {
-    position:sticky;
-}*/
+
 
 .main-header {
   flex: 1 1 0;
@@ -174,7 +162,7 @@ logout:hover,
 }
 
 .side-body {
-  border: 2px solid grey;
+  border: 10px solid grey;
   padding: 10px;
   border-style: outset;
   border-radius: 8px;
@@ -295,7 +283,7 @@ select {
 
 
 .main-body {
-  border: 2px grey;
+  border: 4px grey;
   border-radius: 10px;
   border-style: double;
 }

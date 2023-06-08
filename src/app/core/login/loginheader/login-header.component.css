@@ -1,9 +1,6 @@
-
-
-
 .outerheader {
   width: 100%;
-  background-color: #1D3C34;
+  background-color: #1d273ce0;
   height: 12rem;
   position: absolute;
   top: 0;
@@ -19,12 +16,3 @@
   flex-grow: 1;
   margin: 1% 0% 0% 3%;
 }
-
-
-
-
-
-
-
-
-

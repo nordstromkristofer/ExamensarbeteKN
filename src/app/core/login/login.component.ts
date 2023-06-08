@@ -28,30 +28,8 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    this.errorMessage = null;
-    this.loggingIn = true;
+    // Redirect to the desired page after successful login
+    this.router.navigate(['/calendar']);
 
-    // Call the login method of the AuthService
-    this.authService.login({ username: this.username, password: this.password })
-      .pipe(
-        catchError((error: HttpErrorResponse) => {
-          console.log('Login error:', error);
-          this.errorMessage = error.message;
-          return throwError(error);
-        }),
-        finalize(() => {
-          console.log('Login completed');
-          this.loggingIn = false;
-        })
-      )
-      .subscribe(
-        (success: boolean) => {
-          if (success) {
-            console.log('Login successful');
-            // Redirect to the desired page after successful login
-            this.router.navigate(['/calendar']);
-          }
-        }
-      );
   }
 }
