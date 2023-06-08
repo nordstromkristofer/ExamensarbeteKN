@@ -22,9 +22,9 @@ import { MatSort } from '@angular/material/sort';
 export class AbsentListComponent implements OnInit {
 
   allRequests: AbsentRequest[] = [];
-  displayedColumns: string[] = ['member', 'type', 'startDate', 'endDate', 'comment', 'approve', 'delete'];
+  displayedColumns: string[] = ['member', 'startDate', 'endDate', 'comment', 'approve', 'delete'];
   dataSource: MatTableDataSource<AbsentRequest>;
-  pageSizeOptions: number[] = [-1, 5, 10, 25, 100, 250];
+  pageSizeOptions: number[] = [10, 25, 100, 250];
   pageLength: number;
   pageSize: number;
 

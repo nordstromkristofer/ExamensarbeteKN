@@ -2,12 +2,11 @@
 import { NotFoundComponent } from './core/not-found/not-found.component';
 import { LoginComponent } from './core/login/login.component';
 import { NgModule } from '@angular/core';
-import { CorsInterceptor } from './core/cors.interceptor'
 import { RouterModule, Routes } from '@angular/router';
 import { RowGeneratorComponent } from './calendar/row-generator/row-generator.component';
 import { HeaderComponent } from './core/header/header.component';
 import { LoginHeaderComponent } from './core/login/loginheader/login-header.component';
-import { AuthGuard } from './core/authguard.service';
+
 
 
 const routes: Routes = [

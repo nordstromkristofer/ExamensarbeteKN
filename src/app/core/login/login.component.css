@@ -57,6 +57,15 @@ mat-card-content {
   margin-top: 10%;
 }
 
+.loginheader {
+  text-align: center;
+  position: absolute;
+  bottom: 25rem;
+  left: 8rem;
+  font-size: 2rem;
+  height: 4rem;
+}
+
 .error {
   padding: 16px;
   width: 300px;
