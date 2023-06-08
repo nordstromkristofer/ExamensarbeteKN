@@ -1,4 +1,4 @@
-# Vacation Calendar Application
+# Resurs 2.0
 
 This is a vacation calendar application developed by Kristofer Nordström as an examination assignment for frontend development at Jensen Yrkeshögskola. The application allows employees to select their vacation days, which can be approved/deleted by the HR department.
 
