@@ -3,8 +3,6 @@
 }
 
 
-
-
 .img {
   margin-bottom: 12%;
   height: 22%;
@@ -28,7 +26,6 @@
   font-size: 16px;
 }
 
-.mat-card mat-focus-indicator {}
 
 .logintitle {
   border: 1px solid black;
